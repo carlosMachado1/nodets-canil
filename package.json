@@ -1,0 +1,25 @@
+{
+  "name": "nodets-canil",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "src/server.ts",
+  "scripts": {
+    "start": "node --import=tsx --env-file=.env --watch src/server.ts",
+    "utils": "node --import=tsx --env-file=.env --watch src/utils/projVar.ts"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/mustache-express": "^1.2.5",
+    "@types/node": "^24.10.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "mustache-express": "^1.3.2"
+  }
+}
