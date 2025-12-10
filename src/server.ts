@@ -12,14 +12,14 @@ const server = express()
 server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
 server.use(helmet())
-server.set("view-engine", "mustache")
-server.engine("mustache", mustacheExpress())
+server.set("view engine", "mustache")
 server.set("views", path.join(proj_dir, "views"))
+server.engine("mustache", mustacheExpress())
 server.use(express.static(path.join(proj_dir, "public")))
 server.use(mainRouter)
 
 server.use((req, res) => {
-  res.send("Pagina nao encontrada")
+  res.render("pages/404")
 })
 
 

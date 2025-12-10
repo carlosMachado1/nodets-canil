@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { home } from "../controllers/pageController.js"
+import { cats, dogs, fishes, home } from "../controllers/pageController.js"
 import { searchPage } from "../controllers/searchController.js"
 
 
@@ -10,4 +10,7 @@ mainRouter.get("/ping", (req, res) => {
 })
 
 mainRouter.get("/", home)
+mainRouter.get("/dogs", dogs)
+mainRouter.get("/cats", cats)
+mainRouter.get("/fishes", fishes)
 mainRouter.get("/search", searchPage)
