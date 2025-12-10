@@ -7,13 +7,15 @@
   "type": "module",
   "main": "src/server.ts",
   "scripts": {
-    "start": "node --import=tsx --env-file=.env --watch src/server.ts",
-    "utils": "node --import=tsx --env-file=.env --watch src/utils/projVar.ts"
+    "dev": "node --import=tsx --env-file=.env --watch src/server.ts",
+    "postinstall": "tsc && copyfiles -u 1 src/**/*.mustache /dist",
+    "start": "node --env-file=.env dist/server.js"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/mustache-express": "^1.2.5",
     "@types/node": "^24.10.2",
+    "copyfiles": "^2.4.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   },
